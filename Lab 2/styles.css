@@ -1,0 +1,331 @@
+/* 
+   GLOBAL STYLES
+ */
+
+/* Tag selector */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Tag selector + paragraph rules */
+p {
+    text-indent: 30px;          /* red line */
+    line-height: 30px;          /* line spacing */
+    text-align: justify;        /* alignment in width */
+}
+
+/* Remove red line for second paragraph */
+.no-indent {
+    text-indent: 0;
+}
+
+/* Different sizes, colors and font types for paragraphs */
+.p1 {
+    font-size: 16px;
+    color: #222222;
+    font-family: Georgia, serif;
+}
+
+.p2 {
+    font-size: 14px;
+    color: #0066cc;
+    font-family: Arial, sans-serif;
+}
+
+.p3 {
+    font-size: 18px;
+    color: #cc0000;
+    font-family: "Courier New", monospace;
+}
+
+.p4 {
+    font-size: 15px;
+    color: #006600;
+    font-family: Tahoma, sans-serif;
+}
+
+.p5 {
+    font-size: 17px;
+    color: #663399;
+    font-family: "Comic Sans MS", cursive;
+}
+
+/* =========================
+   HEADERS
+   ========================= */
+
+/* Grouping selector */
+h1, h2, h3 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Main heading styling */
+h1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 25px;
+    margin: -20px -20px 20px -20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    border-radius: 0;
+    font-size: 2.5em;
+}
+
+/* All h2s - italic */
+h2 {
+    font-style: italic;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* All h3s – have a background */
+h3 {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+/* h3 for 3rd page - non-bold (non-fat) */
+.page3 h3,
+.no-bold {
+    font-weight: normal;
+    background-color: #9b59b6;
+}
+
+/* 
+   NAVIGATION & LINKS
+  */
+
+/* Class selector */
+.nav-links,
+.anchor-list {
+    background-color: #2c3e50;
+    padding: 15px;
+    text-align: center;
+    margin: 20px -20px;
+    border-radius: 0;
+}
+
+.nav-links li,
+.anchor-list li {
+    list-style: none;
+    display: inline-block;
+    margin: 5px;
+}
+
+/* All links same font style */
+.nav-links a,
+.anchor-list a {
+    text-decoration: none;
+    font-family: Verdana, sans-serif;
+    padding: 12px 25px;
+    border: 1px solid #2980b9;
+    color: white;
+    background-color: #3498db;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.nav-links a:hover,
+.anchor-list a:hover {
+    background-color: #e74c3c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Bold Top & Bottom links */
+.special {
+    font-weight: bold;
+    background-color: #27ae60;
+}
+
+.special:hover {
+    background-color: #16a085;
+}
+
+/* 
+   IMAGES
+  */
+
+/* ID selector */
+#profile-pic {
+    float: left;
+    margin: 10px;
+    border: 3px solid green;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Image borders (different colors) */
+.img-red {
+    border: 3px solid red;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(255,0,0,0.3);
+    margin: 10px;
+}
+
+.img-green {
+    border: 3px solid green;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,255,0,0.3);
+    margin: 10px;
+}
+
+.img-blue {
+    border: 3px solid blue;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,255,0.3);
+    margin: 10px;
+}
+
+/* Image hover effects */
+.img-red:hover,
+.img-green:hover,
+.img-blue:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* 
+   LISTS
+  */
+
+/* Unordered lists */
+ul {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border-left: 4px solid #3498db;
+}
+
+ul li {
+    margin: 8px 0;
+    line-height: 1.8;
+}
+
+/* Ordered list lowercase letters */
+ol {
+    list-style-type: lower-alpha;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border-left: 4px solid #9b59b6;
+}
+
+ol li {
+    margin: 8px 0;
+    line-height: 1.8;
+}
+
+/* =========================
+   FONTS (Different pages)
+   ========================= */
+
+/* Home page font - Times New Roman */
+.home-page {
+    font-family: "Times New Roman", serif;
+}
+
+/* Other pages font - Verdana */
+.page-other {
+    font-family: Verdana, sans-serif;
+    background-color: #ecf0f1;
+}
+
+/* =========================
+   BACKGROUND IMAGE (Page 3)
+   ========================= */
+
+.bg-page {
+    background-image: url("images/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.page3 {
+    background-color: rgba(255, 255, 255, 0.9);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   CONTENT CONTAINERS
+   ========================= */
+
+/* Add spacing and styling to content sections */
+body > h2 {
+    margin-top: 40px;
+}
+
+body > p,
+body > ul,
+body > ol {
+    margin-bottom: 20px;
+}
+
+/* Image gallery styling */
+.img-red,
+.img-green,
+.img-blue {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* =========================
+   ANCHOR STYLING
+   ========================= */
+
+#top,
+#bottom {
+    scroll-margin-top: 20px;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 2em;
+        margin: -10px -10px 20px -10px;
+    }
+    
+    .nav-links,
+    .anchor-list {
+        margin: 20px -10px;
+    }
+    
+    .nav-links a,
+    .anchor-list a {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    
+    .img-red,
+    .img-green,
+    .img-blue {
+        width: 100%;
+        height: auto;
+    }
+}
