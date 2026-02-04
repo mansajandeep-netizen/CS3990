@@ -1,0 +1,342 @@
+/* =============================================
+   CS3990 Assignment 3 – CSS Advanced
+   ============================================= */
+
+/* ---------------------------------------------
+   1. Background & Font Colors  (2 pts)
+   --------------------------------------------- */
+
+article:first-of-type {
+    background-color: rgb(66, 37, 2);
+    color: rgb(245, 201, 147);
+    padding: 20px;
+    margin: 20px 0;
+}
+
+article:first-of-type h2 {
+    color: rgb(245, 201, 147);
+    font-style: italic;
+    margin-top: 0;
+}
+
+article:first-of-type > div.task1,
+article:first-of-type > div.task2 {
+    background-color: rgb(245, 201, 147);
+    color: rgb(66, 37, 2);
+    padding: 15px;
+    margin: 12px 0;
+}
+
+/* --- Part 2 --- */
+article:last-of-type {
+    background-color: rgb(245, 201, 147);
+    color: rgb(66, 37, 2);
+    padding: 20px;
+    margin: 20px 0;
+}
+
+article:last-of-type h3 {
+    color: rgb(66, 37, 2);
+    font-style: italic;
+    margin-top: 0;
+}
+
+article:last-of-type > div.task1,
+article:last-of-type > div.task2,
+article:last-of-type > div.task3 {
+    background-color: rgb(66, 37, 2);
+    color: rgb(245, 201, 147);
+    padding: 15px;
+    margin: 12px 0;
+}
+
+article:last-of-type h4 {
+    color: rgb(245, 201, 147);
+    margin-top: 0;
+}
+
+/* ---------------------------------------------
+   2. Hover border + inactive opacity  (1 pt)
+   --------------------------------------------- */
+
+article:first-of-type > div.task1:hover,
+article:first-of-type > div.task2:hover {
+    border: 3px solid red;
+}
+
+article:last-of-type > div.task1:hover,
+article:last-of-type > div.task2:hover,
+article:last-of-type > div.task3:hover {
+    border: 3px dotted pink;
+}
+
+article:first-of-type:has(> div:hover) > div:not(:hover) {
+    opacity: 0.5;
+}
+
+article:last-of-type:has(> div:hover) > div:not(:hover) {
+    opacity: 0.5;
+}
+
+/* ---------------------------------------------
+   3. Part 1 – Task 1: Speech Bubble  (3 pts)
+   --------------------------------------------- */
+
+article:first-of-type .task1 {
+    position: relative;
+    min-height: 40px;
+}
+
+article:first-of-type .task1 > div {
+    visibility: hidden;
+    position: absolute;
+    top: -50px;
+    left: 10px;
+    background-color: rgb(245, 201, 147);
+    color: rgb(66, 37, 2);
+    border: 2px solid rgb(66, 37, 2);
+    border-radius: 12px;
+    padding: 8px 14px;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* triangle tail */
+article:first-of-type .task1 > div::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 24px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 12px solid rgb(66, 37, 2);
+}
+
+article:first-of-type .task1:hover > div {
+    visibility: visible;
+}
+
+/* ---------------------------------------------
+   4. Part 1 – Task 2: Styled List  (3 pts)
+   --------------------------------------------- */
+
+article:first-of-type .task2 ul {
+    list-style-type: disc;
+    padding-left: 24px;
+}
+
+/* first element – bold + underline + dark bg highlight */
+article:first-of-type .task2 li:first-child {
+    font-weight: bold;
+    text-decoration: underline;
+    background-color: rgba(66, 37, 2, 0.18);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* all except .special – negative pseudo-class */
+article:first-of-type .task2 li:not(.special) {
+    color: rgb(184, 59, 2);
+}
+
+/* 4th element */
+article:first-of-type .task2 li:nth-child(4) {
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* odd elements – background tint + bold */
+article:first-of-type .task2 li:nth-child(odd) {
+    background-color: rgba(184, 59, 2, 0.15);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* ---------------------------------------------
+   5. Part 2 – Task 1: Custom Blockquote (4 pts)
+   ---------------------------------------------
+   Quotes sit inside coloured circles via
+   width/height + border-radius:50% on the
+   pseudo-elements.
+   --------------------------------------------- */
+
+article:last-of-type .task1 blockquote {
+    position: relative;
+    padding: 30px 50px;
+    margin: 15px 0;
+    font-style: italic;
+}
+
+/* opening quote – circle */
+article:last-of-type .task1 blockquote::before {
+    content: "\201C";
+    position: absolute;
+    left: -10px;
+    top: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgb(245, 201, 147);
+    color: rgb(66, 37, 2);
+    font-size: 38px;
+    font-family: Georgia, serif;
+    font-style: normal;
+    line-height: 60px;
+    text-align: center;
+}
+
+/* closing quote – circle */
+article:last-of-type .task1 blockquote::after {
+    content: "\201D";
+    position: absolute;
+    right: -10px;
+    bottom: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgb(245, 201, 147);
+    color: rgb(66, 37, 2);
+    font-size: 38px;
+    font-family: Georgia, serif;
+    font-style: normal;
+    line-height: 60px;
+    text-align: center;
+}
+
+/* hover: h4 bg changes, circle bg + text colour change */
+article:last-of-type .task1:hover h4 {
+    background-color: rgb(184, 59, 2);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+article:last-of-type .task1:hover blockquote::before,
+article:last-of-type .task1:hover blockquote::after {
+    background-color: rgb(184, 59, 2);
+    color: rgb(245, 201, 147);
+}
+
+/* ---------------------------------------------
+   6. Part 2 – Task 2: Bullet List Icons (2 pts)
+   --------------------------------------------- */
+
+article:last-of-type .task2 ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+article:last-of-type .task2 li {
+    padding: 4px 0 4px 28px;
+    position: relative;
+}
+
+/* default arrow */
+article:last-of-type .task2 li::before {
+    content: "\2192";
+    position: absolute;
+    left: 0;
+    color: rgb(245, 201, 147);
+    font-weight: bold;
+}
+
+/* star for .special */
+article:last-of-type .task2 li.special::before {
+    content: "\2605";
+    color: gold;
+}
+
+/* ---------------------------------------------
+   7. Part 2 – Task 3: Right / Wrong  (5 pts)
+   --------------------------------------------- */
+
+/* --- span labels --- */
+article:last-of-type .task3 > span {
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-right: 6px;
+}
+
+/* "Right" – green badge */
+article:last-of-type .task3 > span:first-of-type {
+    background-color: rgba(0, 140, 0, 0.25);
+    color: rgb(0, 140, 0);
+}
+
+/* "Wrong" – red badge */
+article:last-of-type .task3 > span:nth-of-type(2) {
+    background-color: rgba(200, 0, 0, 0.25);
+    color: rgb(200, 0, 0);
+}
+
+/* --- answer blocks --- */
+article:last-of-type .task3 .wrong,
+article:last-of-type .task3 .correct {
+    position: relative;
+    padding: 18px;
+    margin: 14px 0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+article:last-of-type .task3 .wrong {
+    border: 2px solid rgba(200, 0, 0, 0.5);
+}
+
+article:last-of-type .task3 .correct {
+    border: 2px solid rgba(0, 140, 0, 0.5);
+}
+
+/* --- big overlay icons via ::after --- */
+
+article:last-of-type .task3 .wrong::after {
+    content: "\2715";
+    position: absolute;
+    top:  50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 120px;
+    color: rgba(200, 0, 0, 1);
+    pointer-events: none;
+    z-index: 0;
+}
+
+article:last-of-type .task3 .correct::after {
+    content: "\2714";
+    position: absolute;
+    top:  50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 120px;
+    color: rgba(0, 140, 0, 1);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* --- hover: span -> sibling answer-block bg --- */
+
+article:last-of-type .task3 > span:first-of-type:hover ~ .correct {
+    background-color: rgba(0, 140, 0, 0.2);
+}
+
+article:last-of-type .task3 > span:nth-of-type(2):hover ~ .wrong {
+    background-color: rgba(200, 0, 0, 0.2);
+}
+
+/* ---------------------------------------------
+   General
+   --------------------------------------------- */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #ececec;
+}
+
+li {
+    margin: 4px 0;
+}
