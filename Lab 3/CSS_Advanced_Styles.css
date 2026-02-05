@@ -241,8 +241,9 @@ article:last-of-type .task2 li::before {
 }
 
 /* star for .special */
-article:last-of-type .task2 li.special::before {
-    content: "\2605";
+article:last-of-type .task2 li:nth-child(2)::before,
+article:last-of-type .task2 li:nth-child(4)::before {
+    content: "\01F60A"; /* 😊 */
     color: gold;
 }
 
@@ -339,4 +340,5 @@ body {
 
 li {
     margin: 4px 0;
+
 }
