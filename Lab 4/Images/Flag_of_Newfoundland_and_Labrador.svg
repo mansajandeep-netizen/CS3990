@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <!-- Newfoundland and Labrador Flag -->
+  
+  <!-- White background -->
+  <rect width="600" height="300" fill="#ffffff"/>
+  
+  <!-- Blue triangles (left and right) -->
+  <path d="M 0,0 L 200,150 L 0,300 Z" fill="#0033A0"/>
+  <path d="M 600,0 L 400,150 L 600,300 Z" fill="#0033A0"/>
+  
+  <!-- Red triangles (inner) -->
+  <path d="M 200,0 L 300,150 L 200,300 Z" fill="#CE1126"/>
+  <path d="M 400,0 L 300,150 L 400,300 Z" fill="#CE1126"/>
+  
+  <!-- Gold/Yellow arrow pointing right -->
+  <path d="M 200,100 L 350,150 L 200,200 Z" fill="#FFD700"/>
+  
+  <!-- Gold border on left red triangle -->
+  <path d="M 200,0 L 300,150 L 200,300" stroke="#FFD700" stroke-width="4" fill="none"/>
+</svg>

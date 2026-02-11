@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <!-- Ontario Flag - Red background -->
+  <rect width="600" height="300" fill="#CE1126"/>
+  
+  <!-- Union Jack (top left) -->
+  <g>
+    <rect width="300" height="150" fill="#012169"/>
+    
+    <!-- White diagonals -->
+    <path d="M 0 0 L 300 150 M 300 0 L 0 150" stroke="#ffffff" stroke-width="25"/>
+    
+    <!-- Red diagonals -->
+    <path d="M 0 0 L 300 150 M 300 0 L 0 150" stroke="#C8102E" stroke-width="15"/>
+    
+    <!-- White cross -->
+    <path d="M 150 0 L 150 150 M 0 75 L 300 75" stroke="#ffffff" stroke-width="40"/>
+    
+    <!-- Red cross -->
+    <path d="M 150 0 L 150 150 M 0 75 L 300 75" stroke="#C8102E" stroke-width="24"/>
+  </g>
+  
+  <!-- Shield with three maple leaves -->
+  <g transform="translate(450, 150)">
+    <path d="M -60,-70 L -60,40 Q -60,60 0,70 Q 60,60 60,40 L 60,-70 Z" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    
+    <!-- Red cross -->
+    <rect x="-55" y="-60" width="110" height="15" fill="#CE1126"/>
+    <rect x="-7.5" y="-60" width="15" height="120" fill="#CE1126"/>
+    
+    <!-- Three maple leaves (simplified) -->
+    <g fill="#228B22">
+      <!-- Top leaf -->
+      <path d="M -30,-30 L -28,-20 L -35,-22 L -30,-15 L -25,-22 L -32,-20 Z"/>
+      <!-- Middle leaf -->
+      <path d="M 0,-30 L 2,-20 L -5,-22 L 0,-15 L 5,-22 L -2,-20 Z"/>
+      <!-- Right leaf -->
+      <path d="M 30,-30 L 32,-20 L 25,-22 L 30,-15 L 35,-22 L 28,-20 Z"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <!-- Saskatchewan Flag -->
+  <!-- Green bottom half -->
+  <rect width="600" height="150" y="150" fill="#006B3F"/>
+  
+  <!-- Yellow top half -->
+  <rect width="600" height="150" fill="#FFC72C"/>
+  
+  <!-- Shield on left -->
+  <g transform="translate(120, 75)">
+    <path d="M -40,-50 L -40,30 Q -40,50 0,60 Q 40,50 40,30 L 40,-50 Z" fill="#CE1126" stroke="#000000" stroke-width="1.5"/>
+    
+    <!-- Sheaves of wheat -->
+    <g fill="#FFD700">
+      <rect x="-25" y="0" width="4" height="30"/>
+      <rect x="-15" y="-5" width="4" height="35"/>
+      <rect x="-5" y="0" width="4" height="30"/>
+      <rect x="5" y="-5" width="4" height="35"/>
+      <rect x="15" y="0" width="4" height="30"/>
+    </g>
+    
+    <!-- Wheat heads -->
+    <circle cx="-23" cy="-2" r="3" fill="#FFD700"/>
+    <circle cx="-13" cy="-7" r="3" fill="#FFD700"/>
+    <circle cx="-3" cy="-2" r="3" fill="#FFD700"/>
+    <circle cx="7" cy="-7" r="3" fill="#FFD700"/>
+    <circle cx="17" cy="-2" r="3" fill="#FFD700"/>
+  </g>
+  
+  <!-- Western Red Lily (right side) -->
+  <g transform="translate(480, 75)">
+    <!-- Flower petals -->
+    <circle cx="0" cy="-15" r="15" fill="#FF6B6B"/>
+    <circle cx="13" cy="-8" r="15" fill="#FF6B6B"/>
+    <circle cx="13" cy="8" r="15" fill="#FF6B6B"/>
+    <circle cx="0" cy="15" r="15" fill="#FF6B6B"/>
+    <circle cx="-13" cy="8" r="15" fill="#FF6B6B"/>
+    <circle cx="-13" cy="-8" r="15" fill="#FF6B6B"/>
+    
+    <!-- Center -->
+    <circle cx="0" cy="0" r="8" fill="#FFD700"/>
+    
+    <!-- Stem -->
+    <rect x="-2" y="15" width="4" height="30" fill="#228B22"/>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <!-- Quebec Flag (Fleurdelisé) - Blue background -->
+  <rect width="600" height="300" fill="#003399"/>
+  
+  <!-- White cross -->
+  <rect x="0" y="125" width="600" height="50" fill="#ffffff"/>
+  <rect x="275" y="0" width="50" height="300" fill="#ffffff"/>
+  
+  <!-- Four fleur-de-lis (stylized) -->
+  <!-- Top-left -->
+  <g transform="translate(137.5, 62.5)">
+    <path d="M 0,-20 Q -5,-15 -5,-10 Q -5,-5 0,0 Q 5,-5 5,-10 Q 5,-15 0,-20 Z" fill="#ffffff"/>
+    <path d="M -10,-10 Q -8,-5 -5,0 M 10,-10 Q 8,-5 5,0" stroke="#ffffff" stroke-width="3" fill="none"/>
+    <ellipse cx="0" cy="5" rx="8" ry="12" fill="#ffffff"/>
+  </g>
+  
+  <!-- Top-right -->
+  <g transform="translate(462.5, 62.5)">
+    <path d="M 0,-20 Q -5,-15 -5,-10 Q -5,-5 0,0 Q 5,-5 5,-10 Q 5,-15 0,-20 Z" fill="#ffffff"/>
+    <path d="M -10,-10 Q -8,-5 -5,0 M 10,-10 Q 8,-5 5,0" stroke="#ffffff" stroke-width="3" fill="none"/>
+    <ellipse cx="0" cy="5" rx="8" ry="12" fill="#ffffff"/>
+  </g>
+  
+  <!-- Bottom-left -->
+  <g transform="translate(137.5, 237.5)">
+    <path d="M 0,-20 Q -5,-15 -5,-10 Q -5,-5 0,0 Q 5,-5 5,-10 Q 5,-15 0,-20 Z" fill="#ffffff"/>
+    <path d="M -10,-10 Q -8,-5 -5,0 M 10,-10 Q 8,-5 5,0" stroke="#ffffff" stroke-width="3" fill="none"/>
+    <ellipse cx="0" cy="5" rx="8" ry="12" fill="#ffffff"/>
+  </g>
+  
+  <!-- Bottom-right -->
+  <g transform="translate(462.5, 237.5)">
+    <path d="M 0,-20 Q -5,-15 -5,-10 Q -5,-5 0,0 Q 5,-5 5,-10 Q 5,-15 0,-20 Z" fill="#ffffff"/>
+    <path d="M -10,-10 Q -8,-5 -5,0 M 10,-10 Q 8,-5 5,0" stroke="#ffffff" stroke-width="3" fill="none"/>
+    <ellipse cx="0" cy="5" rx="8" ry="12" fill="#ffffff"/>
+  </g>
+</svg>

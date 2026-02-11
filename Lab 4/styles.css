@@ -1,0 +1,629 @@
+/* Base Styles */
+[class*="column-"] {
+    float: left;
+    padding: 12px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Site Header */
+.site-header {
+    background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+    color: #FFFFFF;
+    padding: 18px;
+    text-align: center;
+    min-height: 10vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Container */
+.container-main {
+    min-height: 50vh;
+    margin: 5px;
+}
+
+.container-main::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+/* Left Navigation Menu (Fun Facts) */
+.column-1.nav-menu {
+    background: linear-gradient(180deg, #f9f9f9 0%, #e9e9e9 100%);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.column-1.nav-menu h3 {
+    color: #FF0000;
+    text-align: center;
+    margin-top: 0;
+    padding: 10px;
+    background: linear-gradient(90deg, #FF0000, #CC0000);
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+.column-1.nav-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 12px;
+}
+
+.column-1.nav-menu li {
+    padding: 12px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #FFFFFF 0%, #f5f5f5 100%);
+    color: #FF0000;
+    border-left: 4px solid #FF0000;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.column-1.nav-menu li:hover {
+    background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+    color: #FFFFFF;
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Tabbed Navigation - ENHANCED WITH PURPLE STYLING AND 3D BEVELED EFFECT */
+.tabbed-nav {
+    background: transparent;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 100;
+}
+
+.tabbed-nav ul {
+    list-style-type: none;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    display: flex;
+    gap: 8px;
+}
+
+.tabbed-nav li {
+    padding: 10px 25px;
+    background: linear-gradient(#ba63e6, #9e46cc);
+    color: white;
+    font-weight: bold;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+    transform: skewX(-12deg);        /* ← tilted rectangle (rhombus) */
+    transition: 0.25s ease;
+    cursor: pointer;
+}
+
+.tabbed-nav li > a.tab-link {
+    display: block;
+    text-decoration: none;
+    color: #FFFFFF;
+    padding: 12px 24px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    
+    border: none;
+    
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(119, 68, 170, 0.4);
+}
+
+/* Tab Hover Effect - ENHANCED */
+.tabbed-nav  li:hover {
+    transform: skewX(0deg);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 1); /* stronger shadow like screenshot */
+}
+
+
+/* Active Tab Effect - ENHANCED WITH DARKER PURPLE */
+.tabbed-nav li > a.tab-link:active,
+.tabbed-nav li > a.tab-link:focus,
+.tabbed-nav li > a.tab-link.active {
+    background: linear-gradient(to bottom, #663399, #552288);
+    color: #FFFFFF;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(85, 34, 136, 0.7);
+}
+
+/* Tab Content Area */
+.tab-content-area {
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    min-height: 400px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Tabs - Target Behavior */
+.tabs article {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.tabs article:target {
+    display: block;
+}
+
+article:target ~ section.default-view {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Default View - Canada Map */
+.default-view {
+    text-align: center;
+    padding: 20px;
+}
+
+#canada-map {
+    display: inline-block;
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    border-radius: 8px;
+}
+
+/* Province List - TASK 2 */
+#province-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+#province-list li {
+    display: flex;
+    align-items: flex-start;
+    padding: 12px;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+    border-left: 4px solid #FF0000;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+#province-list li:hover {
+    background: linear-gradient(135deg, #ffe6e6 0%, #fff0f0 100%);
+    transform: translateX(8px);
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2);
+}
+
+.flag-marker {
+    font-size: 2em;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+/* Flag images */
+.flag-img {
+    width: 60px;
+    height: 40px;
+    margin-right: 15px;
+    flex-shrink: 0;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+.province-info {
+    flex: 1;
+}
+
+.province-info strong {
+    color: #FF0000;
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.province-details {
+    display: none;
+    font-style: italic;
+    color: #555;
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin-top: 6px;
+}
+
+#province-list li:hover .province-details {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: 200px;
+    }
+}
+
+/* Dropdown Menu - TASK 3 */
+.drop-menu {
+    position: relative;
+    display: inline-block;
+    flex: 1;
+}
+
+.drop-content {
+    display: none;
+    position: absolute;
+    background: linear-gradient(to bottom, #9966cc, #7744aa);
+    left: 0;
+    top: 100%;
+    min-width: 100%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+}
+
+.drop-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: #FFFFFF;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.drop-content a:last-child {
+    border-bottom: none;
+}
+
+.drop-content a:hover {
+    background: #FFFFFF;
+    color: #7744aa;
+    transform: translateX(5px);
+    padding-left: 20px;
+}
+
+.drop-menu:hover .drop-content {
+    display: block;
+    animation: dropDown 0.3s ease;
+}
+
+@keyframes dropDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Alberta Holiday Styles */
+#alberta-holidays ul {
+    background: linear-gradient(135deg, #FF0000, #CC0000);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#alberta-holidays li {
+    background: linear-gradient(135deg, #ffa1a1, #ffcccc);
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin: 8px 0;
+    transition: transform 0.3s ease;
+}
+
+#alberta-holidays li:hover {
+    transform: scale(1.02);
+    background: linear-gradient(135deg, #ff8888, #ffaaaa);
+}
+
+#alberta-holidays h3 {
+    color: #FF0000;
+    margin-top: 20px;
+}
+
+/* Alberta Parks Styles */
+#alberta-parks ul {
+    background: linear-gradient(135deg, #FF0000, #CC0000);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#alberta-parks li {
+    background: linear-gradient(135deg, #ffa1a1, #ffcccc);
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin: 8px 0;
+    transition: transform 0.3s ease;
+}
+
+#alberta-parks li:hover {
+    transform: scale(1.02);
+    background: linear-gradient(135deg, #ff8888, #ffaaaa);
+}
+
+#alberta-parks p {
+    margin: 8px 0 0 0;
+    color: #333;
+}
+
+/* Sidebar Right - TASK 4 */
+.sidebar-right {
+    background: linear-gradient(180deg, #FF0000, #CC0000);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-right h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-right section.job-section {
+    float: none;
+    width: 100%;
+    padding: 12px;
+    font-size: 0.9em;
+    margin: 0 0 20px 0;
+    background: #FFFFFF;
+    color: #333;
+    border-radius: 8px;
+    min-height: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.sidebar-right section.job-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Job Header */
+.job-header {
+    border: 5px double #FF0000;
+    background: linear-gradient(135deg, #FF0000, #CC0000);
+    color: #FFFFFF;
+    text-align: center;
+    min-height: 80px;
+    padding: 12px;
+    border-top-right-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.job-header h3 {
+    margin: 8px 0;
+    font-size: 1.3em;
+}
+
+.job-label {
+    width: 80%;
+    max-width: 150px;
+    text-align: left;
+    text-transform: uppercase;
+    border-radius: 0 15px 15px 0;
+    padding: 4px 12px;
+    font-size: 0.8em;
+    margin-bottom: 8px;
+}
+
+.job-label.popular {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.job-label.new {
+    background-color: #ff7979;
+    color: #030000;
+    font-weight: bold;
+}
+
+.job-section p {
+    text-align: left;
+    line-height: 1.6;
+    margin: 12px 0;
+    color: #555;
+}
+
+.salary {
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #FF0000;
+    margin-top: 12px;
+}
+
+.salary::before {
+    content: '$ 52.02';
+}
+
+.salary::after {
+    content: ' an hour';
+    font-style: italic;
+    font-size: 0.7em;
+}
+
+/* Site Footer - Fixed */
+.site-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: left;
+    color: #FFFFFF;
+    font-weight: bold;
+    background: linear-gradient(90deg, #FF0000, #CC0000);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.site-footer section {
+    width: 50%;
+    margin: 0;
+}
+
+.footer-left {
+    padding-left: 2%;
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+    padding-right: 2%;
+}
+
+/* Mobile First - For mobile phones */
+[class*="column-"] {
+    width: 100%;
+}
+
+/* Responsive Design - TASK 4 Mobile */
+@media only screen and (max-width: 767px) {
+    .site-header h1 {
+        font-size: 1.8em;
+    }
+    
+    .tabbed-nav ul {
+        flex-direction: column;
+        gap: 6px;
+    }
+    
+    .tabbed-nav li {
+        flex: 1 1 100%;
+    }
+    
+    .tabbed-nav li > a.tab-link {
+        border-radius: 15px;
+    }
+    
+    .sidebar-right {
+        margin-top: 20px;
+    }
+    
+    .sidebar-right section.job-section {
+        margin-bottom: 15px;
+    }
+    
+    #canada-map {
+        max-width: 100%;
+    }
+    
+    .site-footer {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+    
+    .footer-left,
+    .footer-right {
+        width: 100%;
+        text-align: center;
+        padding: 5px 0;
+    }
+}
+
+/* For tablets */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .column-1 {
+        width: 30%;
+    }
+    
+    .column-2 {
+        width: 70%;
+    }
+    
+    .column-3.sidebar-right {
+        width: 100%;
+        margin-top: 20px;
+    }
+    
+    .sidebar-right section.job-section {
+        float: left;
+        width: calc(50% - 24px);
+        margin: 12px;
+    }
+}
+
+/* For desktop */
+@media only screen and (min-width: 1024px) {
+    .column-1, .column-3.sidebar-right {
+        width: 25%;
+    }
+    
+    .column-2 {
+        width: 50%;
+    }
+    
+    .sidebar-right section.job-section {
+        width: 100%;
+    }
+}
+
+/* Additional styling for better presentation */
+h1 {
+    color: #FF0000;
+    border-bottom: 3px solid #FF0000;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #CC0000;
+    margin-top: 24px;
+}
+
+h3 {
+    color: #FF0000;
+}
+
+p {
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+/* Add padding to body to account for fixed footer */
+body {
+    padding-bottom: 70px;
+}

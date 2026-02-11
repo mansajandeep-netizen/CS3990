@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <!-- Nova Scotia Flag - White background -->
+  <rect width="600" height="300" fill="#ffffff"/>
+  
+  <!-- Blue saltire (X cross) -->
+  <path d="M 0 0 L 600 300 M 600 0 L 0 300" stroke="#0066CC" stroke-width="40"/>
+  
+  <!-- Shield in center -->
+  <g transform="translate(300, 150)">
+    <path d="M -60,-70 L -60,30 Q -60,50 0,65 Q 60,50 60,30 L 60,-70 Z" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    
+    <!-- Blue background for shield -->
+    <rect x="-55" y="-65" width="110" height="120" fill="#0066CC" rx="5"/>
+    
+    <!-- Scottish royal lion (simplified) -->
+    <ellipse cx="0" cy="-20" rx="20" ry="15" fill="#FFD700"/>
+    <circle cx="-8" cy="-25" r="8" fill="#FFD700"/>
+    <circle cx="-10" cy="-27" r="2" fill="#CE1126"/>
+    
+    <!-- Body -->
+    <ellipse cx="5" cy="0" rx="22" ry="18" fill="#FFD700"/>
+    
+    <!-- Tail -->
+    <path d="M 20,5 Q 35,0 30,-10" stroke="#FFD700" stroke-width="6" fill="none"/>
+    
+    <!-- Legs -->
+    <rect x="-10" y="10" width="6" height="20" fill="#FFD700"/>
+    <rect x="10" y="10" width="6" height="20" fill="#FFD700"/>
+    
+    <!-- Red tongue -->
+    <path d="M -15,-20 L -20,-18" stroke="#CE1126" stroke-width="3"/>
+  </g>
+</svg>

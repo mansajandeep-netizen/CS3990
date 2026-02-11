@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <!-- Nunavut Flag -->
+  
+  <!-- Yellow and white sections divided vertically -->
+  <!-- Yellow (left) -->
+  <rect width="300" height="300" fill="#FFD700"/>
+  
+  <!-- White (right) -->
+  <rect x="300" width="300" height="300" fill="#ffffff"/>
+  
+  <!-- Red inukshuk (stone landmark) in center -->
+  <g transform="translate(300, 150)" fill="#CE1126">
+    <!-- Base stones -->
+    <rect x="-30" y="40" width="20" height="15" rx="2"/>
+    <rect x="10" y="40" width="20" height="15" rx="2"/>
+    
+    <!-- Leg stones -->
+    <rect x="-30" y="20" width="20" height="20" rx="2"/>
+    <rect x="10" y="20" width="20" height="20" rx="2"/>
+    
+    <!-- Central column -->
+    <rect x="-10" y="10" width="20" height="45" rx="2"/>
+    
+    <!-- Arms -->
+    <rect x="-50" y="0" width="30" height="15" rx="2"/>
+    <rect x="20" y="0" width="30" height="15" rx="2"/>
+    
+    <!-- Shoulders -->
+    <rect x="-30" y="-5" width="20" height="18" rx="2"/>
+    <rect x="10" y="-5" width="20" height="18" rx="2"/>
+    
+    <!-- Head -->
+    <circle cx="0" cy="-20" r="15"/>
+    
+    <!-- Top stone -->
+    <rect x="-8" y="-45" width="16" height="12" rx="2"/>
+  </g>
+  
+  <!-- North Star (blue) in top right corner -->
+  <g transform="translate(500, 50)" fill="#0072CE">
+    <polygon points="0,-20 5,-6 20,-6 8,2 12,16 0,8 -12,16 -8,2 -20,-6 -5,-6"/>
+  </g>
+</svg>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <!-- British Columbia Flag -->
+  <rect width="600" height="300" fill="#ffffff"/>
+  
+  <!-- Union Jack top portion -->
+  <g>
+    <!-- Blue background -->
+    <rect width="600" height="150" fill="#012169"/>
+    
+    <!-- White diagonals -->
+    <path d="M 0 0 L 600 150 M 600 0 L 0 150" stroke="#ffffff" stroke-width="50"/>
+    
+    <!-- Red diagonals -->
+    <path d="M 0 0 L 600 150 M 600 0 L 0 150" stroke="#C8102E" stroke-width="30"/>
+    
+    <!-- White cross -->
+    <path d="M 300 0 L 300 150 M 0 75 L 600 75" stroke="#ffffff" stroke-width="80"/>
+    
+    <!-- Red cross -->
+    <path d="M 300 0 L 300 150 M 0 75 L 600 75" stroke="#C8102E" stroke-width="48"/>
+  </g>
+  
+  <!-- Sun rays (bottom) -->
+  <rect y="150" width="600" height="150" fill="#ffffff"/>
+  <g transform="translate(300, 225)">
+    <circle r="40" fill="#FFD700"/>
+    <!-- Sun rays -->
+    <path d="M 0,-50 L 0,-80 M 35,-35 L 50,-50 M 50,0 L 80,0 M 35,35 L 50,50 M 0,50 L 0,80 M -35,35 L -50,50 M -50,0 L -80,0 M -35,-35 L -50,-50" stroke="#FFD700" stroke-width="6"/>
+  </g>
+  
+  <!-- Wavy lines representing ocean -->
+  <path d="M 0 260 Q 75 250 150 260 T 300 260 T 450 260 T 600 260" stroke="#0066cc" stroke-width="3" fill="none"/>
+  <path d="M 0 270 Q 75 260 150 270 T 300 270 T 450 270 T 600 270" stroke="#0066cc" stroke-width="3" fill="none"/>
+</svg>
