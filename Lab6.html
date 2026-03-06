@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CS3990 – Assignment 6</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      gap: 16px;
+    }
+    h1 { font-size: 1.6rem; color: #2d3748; margin-bottom: 8px; }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 32px 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 480px;
+      width: 90%;
+    }
+    h2 { font-size: 1.1rem; color: #4a5568; margin-bottom: 20px; }
+    button {
+      background: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 22px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      margin: 6px;
+      transition: background 0.2s;
+    }
+    button:hover { background: #4338ca; }
+    #content { margin-top: 16px; }
+    #content img { max-width: 280px; border-radius: 8px; margin-top: 12px; }
+    #content p {
+      font-size: 0.9rem;
+      color: #4a5568;
+      line-height: 1.6;
+      margin-top: 12px;
+      text-align: left;
+    }
+    .msg { font-size: 1rem; color: #e53e3e; margin-top: 12px; }
+    .success { color: #38a169; }
+  </style>
+</head>
+<body>
+
+<!-- ===================== PART 1 ===================== -->
+<div class="card" id="part1">
+  <h1>CS3990 – Assignment 6</h1>
+  <h2>Part 1 – Conditional Statements</h2>
+  <button onclick="part1Login()">Log In</button>
+  <div id="part1Buttons" style="display:none;">
+    <br>
+    <button id="btnSayHi" onclick="task1()" style="display:none;">Say Hi</button>
+    <button id="btnAnimal" onclick="task2()" style="display:none;">Favorite Animal</button>
+  </div>
+  <div id="part1Msg" class="msg"></div>
+  <div id="content"></div>
+</div>
+
+<!-- ===================== PART 2 ===================== -->
+<div class="card">
+  <h2>Part 2 – Loops &amp; Function Expressions</h2>
+  <button onclick="part2Start()">Log In (Part 2)</button>
+  <div id="part2Msg" style="margin-top:12px; font-size:0.9rem; color:#2d3748;"></div>
+</div>
+
+<script>
+// ─────────────────────────────────────────────
+//  PART 1
+// ─────────────────────────────────────────────
+
+function part1Login() {
+  const user = prompt("Enter your role (admin / student):");
+  const btnSayHi  = document.getElementById("btnSayHi");
+  const btnAnimal = document.getElementById("btnAnimal");
+  const part1Msg  = document.getElementById("part1Msg");
+  const content   = document.getElementById("content");
+  const btnArea   = document.getElementById("part1Buttons");
+
+  // reset
+  btnSayHi.style.display  = "none";
+  btnAnimal.style.display = "none";
+  part1Msg.textContent    = "";
+  content.innerHTML       = "";
+
+  if (user === null) return;
+
+  if (user.toLowerCase() === "admin") {
+    btnArea.style.display   = "block";
+    btnSayHi.style.display  = "inline-block";
+    btnAnimal.style.display = "inline-block";
+  } else if (user.toLowerCase() === "student") {
+    btnArea.style.display   = "block";
+    btnSayHi.style.display  = "inline-block";
+  } else {
+    part1Msg.textContent = "I don't know you";
+  }
+}
+
+// Task 1 – switch greeting
+function task1() {
+  const lang = prompt("Enter language abbreviation (eng / fr / de / spa):");
+  if (lang === null) return;
+  let greeting;
+  switch (lang.trim()) {
+    case "Eng": greeting = "Hello";   break;
+    case "Fr":  greeting = "Bonjour"; break;
+    case "De":  greeting = "Hallo";   break;
+    case "Spa": greeting = "Hola";    break;
+    default:    greeting = "Sorry, but I do not speak your language.";
+  }
+  alert(greeting);
+}
+
+// Task 2 – animal / age image
+function task2() {
+  const content = document.getElementById("content");
+  content.innerHTML = "";
+
+  const birthYear = parseInt(prompt("Enter your year of birth:"));
+  if (isNaN(birthYear)) { alert("Invalid year."); return; }
+
+  const currentYear = new Date().getFullYear();
+  const age = currentYear - birthYear;
+
+  if (age < 18) {
+    alert("Content is not available due to age restrictions");
+    return;
+  }
+
+  if (age >= 18 && age <= 55) {
+    const animal = prompt("Enter animal name (cat / dog / frog / mouse):");
+    if (animal === null) return;
+
+    // Animal images from Wikimedia Commons (free-use)
+    let src;
+    switch (animal ? animal.trim() : "") {
+      case "Cat":
+        src = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Dog_Breeds.jpg/320px-Dog_Breeds.jpg";
+        // Use a cat image
+        src = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/320px-Cat_November_2010-1a.jpg";
+        break;
+      case "Dog":
+        src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/YellowLabradorLooking_new.jpg/320px-YellowLabradorLooking_new.jpg";
+        break;
+      case "Frog":
+        src = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Rana_temporaria_2.jpg/320px-Rana_temporaria_2.jpg";
+        break;
+      case "Mouse":
+        src = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/House_mouse.jpg/320px-House_mouse.jpg";
+        break;
+      default:
+        content.innerHTML = "<p class='msg'>Unknown animal. Please enter Cat, Dog, Frog, or Mouse.</p>";
+        return;
+    }
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = animal;
+    content.appendChild(img);
+
+  } else {
+    // age > 55
+    const p = document.createElement("p");
+    p.textContent = `Much like mathematics, programming is a logico-deductive system. And I think the important point that I am making is that in a purely logico-deductive system there is no philosophy - everything is known. However, insofar as there is art in mathematics, there is philosophy in mathematics. Insofar as there is art in programming, there is philosophy in programming.`;
+    content.appendChild(p);
+  }
+}
+
+
+// ─────────────────────────────────────────────
+//  PART 2
+// ─────────────────────────────────────────────
+
+// Generates a random 6-digit password
+const generateAdminPassword = function() {
+  let pwd = "";
+  for (let i = 0; i < 6; i++) {
+    pwd += Math.floor(Math.random() * 10);
+  }
+  return pwd;
+};
+
+const requestPassword = function(correctPwd, maxAttempts) {
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    const entered = prompt(`Enter password (attempt ${attempt} of ${maxAttempts}):`);
+    if (entered === null) return false;
+    if (entered === correctPwd) return true;
+    if (attempt < maxAttempts) {
+      alert(`Wrong password. ${maxAttempts - attempt} attempt(s) remaining.`);
+    }
+  }
+  alert("Access denied. Too many failed attempts.");
+  return false;
+};
+
+const adminStep2 = function() {
+  const age = parseInt(prompt("Enter your age:"));
+  const admissionYear = parseInt(prompt("Enter your year of admission to NWP:"));
+  if (isNaN(age) || isNaN(admissionYear)) { alert("Invalid input."); return; }
+
+  const currentYear  = new Date().getFullYear();
+  const ageIn4Years  = age + 4;
+  const bachelorYear = admissionYear + 4;
+  alert(`In 4 years you will be ${ageIn4Years} years old.\nYou will receive your Bachelor's degree in CS in ${bachelorYear}.`);
+};
+
+const designerTesterStep2 = function(role) {
+  const birthYear = parseInt(prompt("Enter your year of birth:"));
+  if (isNaN(birthYear)) { alert("Invalid input."); return; }
+  const age = new Date().getFullYear() - birthYear;
+
+  const portfolios = parseInt(prompt("Enter the number of available portfolios:"));
+  if (isNaN(portfolios)) { alert("Invalid input."); return; }
+
+  const courseName = role === "designer" ? "Adobe XD" : "QA Pro";
+  let message = "";
+
+  if (age >= 14 && age <= 18 && portfolios >= 5 && portfolios <= 10) {
+    message = `You receive a 10% discount on the optional "${courseName}" course!`;
+  } else if (age > 18 && portfolios >= 10 && portfolios <= 20) {
+    message = `You receive a 7% discount on the optional "${courseName}" course!`;
+  } else {
+    message = "No discount applies based on your age and portfolio count.";
+  }
+  alert(message);
+};
+
+const part2Start = function() {
+  const msgEl = document.getElementById("part2Msg");
+  msgEl.textContent = "";
+
+  const login = prompt("Enter your login:");
+  if (login === null) return;
+
+  const loginLower = login.toLowerCase().trim();
+
+  if (loginLower === "admin") {
+    const pwd = generateAdminPassword();
+    // In a real app the password would NOT be shown; shown here for demo/grading
+    alert("Admin password (demo): " + pwd);
+    const ok = requestPassword(pwd, 2);
+    if (!ok) return;
+    msgEl.innerHTML = `<span class="success">Welcome, Admin!</span>`;
+    adminStep2();
+
+  } else if (loginLower === "designer") {
+    const ok = requestPassword("111", 3);
+    if (!ok) return;
+    msgEl.innerHTML = `<span class="success">Welcome, Designer!</span>`;
+    designerTesterStep2("designer");
+
+  } else if (loginLower === "tester") {
+    const ok = requestPassword("222", 3);
+    if (!ok) return;
+    msgEl.innerHTML = `<span class="success">Welcome, Tester!</span>`;
+    designerTesterStep2("tester");
+
+  } else {
+    alert("No such user.");
+  }
+};
+</script>
+</body>
+</html>
