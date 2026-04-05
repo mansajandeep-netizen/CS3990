@@ -1,0 +1,197 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: #efefef;
+  color: #222;
+}
+
+.page {
+  width: min(1000px, 94%);
+  margin: 20px auto;
+}
+
+h1,
+h2 {
+  margin: 0 0 15px 0;
+}
+
+.box {
+  background: #e5a3a3;
+  border: 1px solid #cc8b8b;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+.generator-panel {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.control-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.control-btn {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #888;
+  background: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.number-box {
+  min-width: 60px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  background: #b31f1f;
+  color: #fff;
+  font-weight: bold;
+  border: 1px solid #7d1111;
+}
+
+.make-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.news-item {
+  background: #d66a6a;
+  margin: 10px 0;
+  padding: 10px 0 14px;
+  text-align: center;
+}
+
+.news-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.news-text {
+  background: #1a0606;
+  color: #fff;
+  padding: 8px;
+  margin: 8px 0 10px;
+}
+
+.remove-btn {
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+#paletteContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 15px;
+}
+
+.color-cell {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #999;
+  cursor: pointer;
+}
+
+#paletteText {
+  background: #f6ede7;
+  padding: 18px;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+#menuToggleBtn {
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+#sweetMenuWrap {
+  display: none;
+}
+
+#sweetMenu {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+  max-width: 250px;
+}
+
+#sweetMenu li {
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  background: #f7dede;
+  border: 1px solid #c99494;
+  cursor: pointer;
+}
+
+#sweetMenu li.active {
+  color: red;
+  font-weight: bold;
+}
+
+#sweetImageBox {
+  margin-top: 10px;
+}
+
+#sweetImage {
+  max-width: 260px;
+  display: none;
+  border: 2px solid #c99494;
+}
+
+#colors {
+  margin-bottom: 20px;
+}
+
+.color-btn {
+  margin-right: 8px;
+  margin-bottom: 8px;
+  padding: 8px 14px;
+  border: 1px solid #222;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+}
+
+#fruitList {
+  list-style: none;
+  padding-left: 0;
+}
+
+#fruitList li {
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  color: #fff;
+  position: relative;
+}
+
+.highlighted {
+  box-shadow: 0 0 10px 4px #fff;
+}
+
+.stars {
+  margin-top: 8px;
+  font-size: 24px;
+}
+
+.star {
+  color: black;
+  cursor: pointer;
+  margin-right: 2px;
+}
+
+.star.active-star {
+  color: orange;
+}
