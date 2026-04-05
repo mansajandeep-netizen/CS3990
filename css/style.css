@@ -1,0 +1,277 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  color: #111;
+  background:
+    linear-gradient(rgba(255,255,255,0.62), rgba(255,255,255,0.62)),
+    url("../images/bg.jpg") center center / cover no-repeat fixed,
+    #ededed;
+  overflow-x: hidden;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 18px 10px 32px;
+}
+
+.page-header {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.page-header h1 {
+  margin: 0 0 14px;
+  font-family: "Oswald", Arial, sans-serif;
+  font-size: clamp(1.7rem, 2.2vw, 2.4rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.start-btn {
+  border: none;
+  color: #ffe6ff;
+  font-family: "Oswald", Arial, sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #a60088, #72217e);
+  box-shadow: 0 4px 0 #55215b, 0 8px 20px rgba(0,0,0,0.18);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.start-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 0 #55215b, 0 12px 24px rgba(0,0,0,0.22);
+  filter: brightness(1.08);
+}
+
+.start-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #55215b, 0 6px 14px rgba(0,0,0,0.2);
+}
+
+.game-area {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.status-panel {
+  text-align: center;
+  min-height: 110px;
+  margin-top: 8px;
+}
+
+.score-title,
+.score-stars,
+.timer-row {
+  font-family: "Oswald", Arial, sans-serif;
+  color: #ff4fd2;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.75);
+}
+
+.score-title {
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  margin-bottom: 10px;
+}
+
+.score-stars {
+  min-height: 36px;
+  font-size: 1.7rem;
+  color: #a80aa1;
+  letter-spacing: 8px;
+  margin-bottom: 12px;
+}
+
+.timer-row {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: clamp(1.3rem, 1.9vw, 1.9rem);
+}
+
+.message-box {
+  color: #8c2883;
+  font-size: 1rem;
+  min-height: 1.2em;
+}
+
+.board {
+  width: min(92vw, 1020px);
+  min-height: 420px;
+  margin: 18px auto 0;
+  padding: 20px;
+  border: 3px solid #33394b;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(235, 215, 244, 0.95), rgba(196, 148, 226, 0.95));
+  box-shadow: 0 8px 22px rgba(50, 38, 70, 0.18);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 16px;
+  align-content: start;
+}
+
+.tile {
+  min-height: 180px;
+  background: #2f4051;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06), 0 4px 10px rgba(0,0,0,0.14);
+  cursor: pointer;
+  transition: transform 0.25s ease, filter 0.25s ease, background 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tile:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.03);
+}
+
+.tile-face {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.tile-front {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #a00066, #bf0069 55%, #91004f);
+  color: #ffc1f1;
+  padding: 14px 10px 10px;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.tile.done .tile-front {
+  filter: brightness(0.97);
+}
+
+.tile.done::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.08);
+  pointer-events: none;
+}
+
+.question-text {
+  font-weight: 700;
+  font-size: 0.92rem;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.options-wrap {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.option-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.84rem;
+  line-height: 1.1;
+}
+
+.option-line input {
+  margin: 0;
+  transform: scale(0.9);
+  accent-color: #ffffff;
+}
+
+.check-btn {
+  align-self: flex-start;
+  border: 1px solid #d7d7d7;
+  background: #f1f1f1;
+  color: #111;
+  padding: 3px 8px;
+  border-radius: 2px;
+  font-size: 0.76rem;
+  cursor: pointer;
+}
+
+.check-btn:hover {
+  background: #fff;
+}
+
+.asset-card {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #a00066, #bf0069 55%, #91004f);
+  color: #ffc1f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 14px;
+  text-align: center;
+  gap: 10px;
+}
+
+.asset-icon {
+  font-size: 2rem;
+}
+
+.asset-text {
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.game-over-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .page {
+    padding: 14px 8px 26px;
+  }
+
+  .board {
+    width: min(96vw, 1020px);
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+    gap: 12px;
+    padding: 14px;
+    min-height: 360px;
+  }
+
+  .tile {
+    min-height: 168px;
+  }
+
+  .tile-front,
+  .asset-card {
+    padding: 12px 9px;
+  }
+
+  .question-text {
+    font-size: 0.88rem;
+  }
+
+  .option-line {
+    font-size: 0.8rem;
+  }
+}

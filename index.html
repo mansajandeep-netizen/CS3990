@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>News</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CS3990 Final Project - Game-based Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <div class="page">
+    <header class="page-header">
+      <h1>Final Project: Game-based Quiz</h1>
+      <button id="startBtn" class="start-btn">Start GAME</button>
+    </header>
 
-<div id="app">
-  <p>Last news</p>
+    <main class="game-area">
+      <section id="statusPanel" class="status-panel hidden" aria-live="polite">
+        <div class="score-title">Your score:</div>
+        <div id="scoreStars" class="score-stars"></div>
+        <div class="timer-row">
+          <span id="timerText">0 secs.</span>
+          <span id="messageBox" class="message-box"></span>
+        </div>
+      </section>
 
-  <div id="content">
-    <p></p>
-    <p></p>
-    <p></p>
+      <section id="board" class="board hidden" aria-label="Quiz board"></section>
+    </main>
   </div>
 
-  <input id="myBtn" type="button" value="click me" />
-</div>
-
-<script src="src/index1.js"></script>
-
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/Data.js"></script>
+  <script src="js/Utils.js"></script>
+  <script src="js/Card.js"></script>
+  <script src="js/Main.js"></script>
 </body>
 </html>
